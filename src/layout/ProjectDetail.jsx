@@ -159,17 +159,17 @@ export default function ProjectDetail() {
   return (
     <Box>
       <Box
-        position={"relative"}
+       
         color={"white"}
       
         mx={{ base: "-5", lg: "-16" }}
-        h={{ base: "70vh", lg: "80vh" }}
+      
         bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor})`}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}
         gap={5}
-        overflow={"hidden"}
+      
       >
         <Box
           mt={{ base: 16, lg: 28 }}
@@ -193,9 +193,8 @@ export default function ProjectDetail() {
           </Box>
         </Box>
         <Image
-          position={{ base: "absolute", lg: "inherit" }}
-          bottom={0}
-          boxSize={{ base: "fit-content", lg: "2xl" }}
+        
+       width={"xl"}
           src={project.heroImage}
         />
       </Box>
