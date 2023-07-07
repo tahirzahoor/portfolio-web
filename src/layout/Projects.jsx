@@ -31,7 +31,7 @@ export default function Projects() {
   const [isLargerThanLg] = useMediaQuery("(min-width: 64em)");
   const [noOfProject, setNoOfProject] = useState(6);
   useEffect(() => {
-    // window.scrollTo({ top: "0px"});
+    window.scrollTo({ top: "0px"});
     const fetchProjects = async () => {
       dispatch(
         setProjects(
@@ -145,6 +145,7 @@ export default function Projects() {
         justifyContent={"center"}
         my={5}
         mx={{base:-5 , lg:-16}}
+        gap={5}
       >
        
         {projects.slice(0, noOfProject).map((item) => (
@@ -156,6 +157,7 @@ export default function Projects() {
             id={item.id}
           />
         ))}
+        
         
         
       </Stack>

@@ -136,12 +136,12 @@ export default function Contact() {
               <FormControl id="name">
                 <Input
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                  borderColor={"neutrals.40"}
                   placeholder="Please enter your Name"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   type="text"
@@ -153,12 +153,12 @@ export default function Contact() {
               <FormControl id="email">
                 <Input
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                  borderColor={"neutrals.40"}
                   placeholder="Please enter your Email"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   type="email"
@@ -171,12 +171,12 @@ export default function Contact() {
                 <Textarea
                   h={"36"}
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                  borderColor={"neutrals.40"}
                   placeholder="Describe your thoughts"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   {...register("thoughts", { required: true })}

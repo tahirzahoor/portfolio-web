@@ -33,7 +33,7 @@ export default function About() {
           , you're not just building apps you're building bridges that connect
           people, empower businesses, and revolutionize the digital landscape."
         </Heading>
-        <Image mx={{base:"auto"}} src={AboutImage} boxSize={"md"} />
+        <Image mx={{base:"auto"}} src={AboutImage} boxSize={"xl"} />
       </Box>
 
       <Box my={5} display={"flex"} gap={5} flexDirection={{base:"column", lg:"row"}}>
@@ -44,6 +44,8 @@ export default function About() {
             size={"md"}
             fontWeight={"medium"}
             textAlign={"center"}
+            mt={5}
+            mb={2}
           >
             Career & Story
           </Heading>
@@ -170,7 +172,7 @@ export default function About() {
                   fontFamily={"custom"}
                   gap={5}
                 >
-                  <Stack>
+                  <Stack >
                     <Box>
                       <Text>
                         Master of Science - Human Computer Interaction

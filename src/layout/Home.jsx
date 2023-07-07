@@ -237,43 +237,44 @@ export default function Home() {
           <HStack
             border={"2px"}
             borderColor={"primary.200"}
-            gap={{ base: "2", lg: "20" }}
-            px={{ base: "5", lg: "8" }}
-            py={{ base: "3", lg: "8" }}
-            borderRadius={{ base: 20, lg: 40 }}
+            gap={{ base: "2", lg: "5" }}
+            px={5}
+            py={{ base: "3", lg: "5" }}
+            borderRadius={{ base: 20, lg: 20 }}
           >
             <Heading
               as={"h6"}
-              size={{ base: "md", lg: "4xl" }}
+              size={{ base: "md", lg: "2xl" }}
               color={"primary.200"}
               fontWeight={"normal"}
             >
               8+
             </Heading>
-            <Text textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
+            <Text width={"80%"} textAlign={"center"} fontSize={{ base: "sm", lg: "xl" }}>
               YEARS OF EXPERIENCE
             </Text>
           </HStack>
           <HStack
             border={"2px"}
             borderColor={"primary.200"}
-            gap={{ base: "2", lg: "20" }}
-            px={{ base: "5", lg: "8" }}
-            py={{ base: "2", lg: "8" }}
-            borderRadius={{ base: 20, lg: 40 }}
+            gap={{ base: "2", lg: "5" }}
+            px={5}
+            py={{ base: "3", lg: "5" }}
+            borderRadius={{ base: 20, lg: 20 }}
           >
             <Heading
               as={"h6"}
-              size={{ base: "md", lg: "4xl" }}
+              size={{ base: "md", lg: "2xl" }}
               color={"primary.200"}
               fontWeight={"normal"}
             >
               150+
             </Heading>
-            <Text textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
+            <Text width={"80%"} textAlign={"center"} fontSize={{ base: "sm", lg: "xl" }}>
               Projects Completed
             </Text>
           </HStack>
+        
         </Stack>
         <Stack gap={3} textAlign={{ base: "center", lg: "left" }}>
           <Heading
@@ -394,9 +395,10 @@ export default function Home() {
               category={item.category}
             />
           ))}
+          
         </Box>
       </Box>
-      <Box my={5}>
+      <Box mt={20}>
         <Heading
           textAlign={["center", "left"]}
           fontWeight={"medium"}
@@ -439,7 +441,7 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box w={"full"}>
+        <Box w={"full"} ml={-96}>
           <Heading
             my={10}
             textTransform={"uppercase"}
@@ -455,12 +457,12 @@ export default function Home() {
               <FormControl id="name">
                 <Input
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                  borderColor={"neutrals.40"}
                   placeholder="Please enter your Name"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   type="text"
@@ -472,12 +474,12 @@ export default function Home() {
               <FormControl id="email">
                 <Input
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                  borderColor={"neutrals.40"}
                   placeholder="Please enter your Email"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   type="email"
@@ -490,12 +492,12 @@ export default function Home() {
                 <Textarea
                   h={"36"}
                   border={"1px"}
-                  borderColor={"neutrals.50"}
+                 borderColor={"neutrals.40"}
                   placeholder="Describe your thoughts"
                   _placeholder={{
                     fontFamily: "custom",
                     fontStyle: "italic",
-                    color: "neutrals.200",
+                    color: "neutrals.60",
                   }}
                   fontFamily={"custom"}
                   {...register("thoughts", { required: true })}

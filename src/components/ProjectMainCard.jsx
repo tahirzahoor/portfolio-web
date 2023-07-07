@@ -24,7 +24,7 @@ export default function ProjectMainCard({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Link to={`/project/${id}`}>
-      <Stack _hover={{ cursor: "pointer"}} my={5}
+      <Stack _hover={{ cursor: "pointer"}}
     onMouseEnter={() => {
       setIsHovered(true);
     }}
@@ -40,7 +40,7 @@ export default function ProjectMainCard({
         borderColor={"neutrals.50"}
         
         _hover={{ boxShadow:"2xl"}}
-        m={5}
+       
       >
         <CardBody>
           <Heading color={"black"} textAlign={"center"} size={"md"}>
@@ -59,7 +59,7 @@ export default function ProjectMainCard({
             animate={{ scale: isHovered ? 1.1 : 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Image boxSize={"xs"} src={mainImage} mt={5} />
+            <Image width={"md"} src={mainImage} mt={5} />
           </motion.div>
         </CardBody>
       </Card>
@@ -76,7 +76,6 @@ export default function ProjectMainCard({
               transition={{ duration: 1 }}
             >
               <Button
-                mt={5}
                 variant={"unstyled"}
                 rightIcon={<AiOutlineRight />}
                 display={"flex"}

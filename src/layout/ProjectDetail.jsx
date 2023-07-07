@@ -75,25 +75,18 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
 
   return (
     <Stack
-      mx={{ base: 0, lg: 20 }}
+      mx={{ base: 0, lg: "36" }}
       my={{ base: 5, lg: 10 }}
-      gap={5}
+      gap={20}
       direction={{ base: "column", lg: direction ? "row-reverse" : "row" }}
       alignItems={"center"}
-      justifyContent={"space-evenly"}
+      
     >
-      <Card
-        w={{ base: "full", lg: "fit-content" }}
-        px={{ base: 5, lg: 20 }}
-        bgColor={"#E7ECF9"}
-        borderRadius={"3xl"}
-        position={"relative"}
-        alignItems={"center"}
-      >
-        <Image boxSize={{ base: "200px", lg: "sm" }} src={image} />
+      <Card p={5} bgColor={"#E7ECF9"} borderRadius={"3xl"} alignItems={"center"}>
+        <Image  width={"lg"} src={image} />
       </Card>
       <Stack
-        w={{ base: "full", lg: 96 }}
+        w={{ base: "full", lg: "md" }}
         textAlign={{ base: "center", lg: "left" }}
       >
         <Heading size={"md"} fontWeight={"medium"} color={"primary.200"}>
@@ -117,7 +110,7 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
   );
 };
 
-const ImageCard = ({image , bColor}) => (
+const ImageCard = ({ image, bColor }) => (
   <Card
     w={{ base: "full", lg: "fit-content" }}
     bgColor={bColor}
@@ -127,7 +120,6 @@ const ImageCard = ({image , bColor}) => (
     mx={{ base: 0, lg: 5 }}
     alignItems={"center"}
   >
-    
     <Image boxSize={{ base: "200px", lg: "sm" }} src={image} />
   </Card>
 );
@@ -159,20 +151,16 @@ export default function ProjectDetail() {
   return (
     <Box>
       <Box
-       
         color={"white"}
-      
         mx={{ base: "-5", lg: "-16" }}
-      
         bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor})`}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}
         gap={5}
-      
+        py={16}
       >
         <Box
-          mt={{ base: 16, lg: 28 }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -181,7 +169,7 @@ export default function ProjectDetail() {
           textAlign={"center"}
         >
           <Heading fontWeight={"medium"}>{project.title}</Heading>
-          <Text mx={{ base: 0, lg: 52 }}>{project.description}</Text>
+          <Text mx={{ base: 0, lg: 52 }}>{project.tagline}</Text>
           <Heading size={"md"} fontWeight={"medium"}>
             {project.category}
           </Heading>
@@ -192,11 +180,7 @@ export default function ProjectDetail() {
               ))}
           </Box>
         </Box>
-        <Image
-        
-       width={"xl"}
-          src={project.heroImage}
-        />
+        <Image width={"xl"} src={project.heroImage} />
       </Box>
 
       <Box>
@@ -232,45 +216,52 @@ export default function ProjectDetail() {
           {project.images
             ?.slice(2, project.images.length)
             .map((item, index) => (
-              <ImageCard key={index} image={item} bColor={project.colorScheme?.primaryColor} />
+              <ImageCard
+                key={index}
+                image={item}
+                bColor={project.colorScheme?.primaryColor}
+              />
             ))}
         </Box>
       </Box>
 
-      {(project.links?.platform == "android" || project.links?.platform == "android") && <Box
-        color={"black"}
-        bgColor={"#DCE5EF"}
-        mx={{ base: -5, lg: -16 }}
-        display={"flex"}
-        justifyContent={{ base: "center", lg: "space-around" }}
-        py={5}
-        px={2}
-      >
-        <Stack
-          gap={{ base: "2", lg: "5" }}
-          w={{ base: "full", lg: "fit-content" }}
-          justifyContent={"center"}
+      {(project.links?.platform == "android" ||
+        project.links?.platform == "android") && (
+        <Box
+          color={"black"}
+          bgColor={"#DCE5EF"}
+          mx={{ base: -5, lg: -16 }}
+          display={"flex"}
+          justifyContent={{ base: "center", lg: "space-around" }}
+          py={5}
+          px={2}
         >
-          <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
-          <Heading
-            size={{ base: "xs", lg: "md" }}
-            fontWeight={"medium"}
-            color={"neutrals.300"}
+          <Stack
+            gap={{ base: "2", lg: "5" }}
+            w={{ base: "full", lg: "fit-content" }}
+            justifyContent={"center"}
           >
-            Have a look on my Work
-          </Heading>
-        </Stack>
-        <Box>
-          <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
-          {project.links?.map((item, index) => (
-            <LinkIconButton
-              key={index}
-              platform={item.platform}
-              link={item.link}
-            />
-          ))}
+            <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
+            <Heading
+              size={{ base: "xs", lg: "md" }}
+              fontWeight={"medium"}
+              color={"neutrals.300"}
+            >
+              Have a look on my Work
+            </Heading>
+          </Stack>
+          <Box>
+            <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
+            {project.links?.map((item, index) => (
+              <LinkIconButton
+                key={index}
+                platform={item.platform}
+                link={item.link}
+              />
+            ))}
+          </Box>
         </Box>
-      </Box>}
+      )}
       <Box
         bgColor={colorMode === "light" ? "neutrals.30" : "neutrals.600"}
         my={10}
@@ -309,7 +300,7 @@ export default function ProjectDetail() {
         <Card
           w={{ base: "full", lg: "96" }}
           h={"fit-content"}
-          px={{ base: 5, lg: 16 }}
+          px={5}
           py={5}
           rounded={"lg"}
           border={"1px"}
@@ -345,69 +336,71 @@ export default function ProjectDetail() {
         />
       </Box>
 
-      {projects.length>4 && <Box py={10} position={"relative"}>
-        <Heading
-          mx={5}
-          top={{ base: "-5", lg: 10 }}
-          size={"xl"}
-          fontWeight={"medium"}
-          position={"absolute"}
-        >
-          See more{" "}
-          <Text as={"span"} color={"primary.200"}>
-            Projects
-          </Text>
-        </Heading>
-        <Carousel
-          renderArrowPrev={(onClickHandler) => (
-            <IconButton
-              _hover={{ color: "primary.200" }}
-              position={"absolute"}
-              zIndex={1}
-              right={20}
-              top={0}
-              display={"flex"}
-              border={"1px"}
-              rounded={"full"}
-              variant={"unstyled"}
-              onClick={onClickHandler}
-            >
-              <FaChevronLeft />
-            </IconButton>
-          )}
-          renderArrowNext={(onClickHandler) => (
-            <IconButton
-              _hover={{ color: "primary.200" }}
-              position={"absolute"}
-              zIndex={1}
-              right={0}
-              top={0}
-              display={"flex"}
-              border={"1px"}
-              rounded={"full"}
-              variant={"unstyled"}
-              onClick={onClickHandler}
-            >
-              <FaChevronRight />
-            </IconButton>
-          )}
-          showThumbs={false}
-          showStatus={false}
-          showArrows={true}
-          emulateTouch={true}
-          infiniteLoop={true}
-          swipeable={true}
-          renderIndicator={() => {
-            false;
-          }}
-          centerMode={true}
-          centerSlidePercentage={33.33}
-        >
-          {projects.map((item) => (
-            <OtherProjects key={item.id} logo={item.logo} id={item.id} />
-          ))}
-        </Carousel>
-      </Box>}
+      {projects.length > 4 && (
+        <Box py={10} position={"relative"}>
+          <Heading
+            mx={5}
+            top={{ base: "-5", lg: 10 }}
+            size={"xl"}
+            fontWeight={"medium"}
+            position={"absolute"}
+          >
+            See more{" "}
+            <Text as={"span"} color={"primary.200"}>
+              Projects
+            </Text>
+          </Heading>
+          <Carousel
+            renderArrowPrev={(onClickHandler) => (
+              <IconButton
+                _hover={{ color: "primary.200" }}
+                position={"absolute"}
+                zIndex={1}
+                right={20}
+                top={0}
+                display={"flex"}
+                border={"1px"}
+                rounded={"full"}
+                variant={"unstyled"}
+                onClick={onClickHandler}
+              >
+                <FaChevronLeft />
+              </IconButton>
+            )}
+            renderArrowNext={(onClickHandler) => (
+              <IconButton
+                _hover={{ color: "primary.200" }}
+                position={"absolute"}
+                zIndex={1}
+                right={0}
+                top={0}
+                display={"flex"}
+                border={"1px"}
+                rounded={"full"}
+                variant={"unstyled"}
+                onClick={onClickHandler}
+              >
+                <FaChevronRight />
+              </IconButton>
+            )}
+            showThumbs={false}
+            showStatus={false}
+            showArrows={true}
+            emulateTouch={true}
+            infiniteLoop={true}
+            swipeable={true}
+            renderIndicator={() => {
+              false;
+            }}
+            centerMode={true}
+            centerSlidePercentage={33.33}
+          >
+            {projects.map((item) => (
+              <OtherProjects key={item.id} logo={item.logo} id={item.id} />
+            ))}
+          </Carousel>
+        </Box>
+      )}
     </Box>
   );
 }

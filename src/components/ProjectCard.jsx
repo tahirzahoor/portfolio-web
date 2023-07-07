@@ -26,7 +26,7 @@ export default function ProjectCard({
       direction={{ base: "column", lg: odd ? "row-reverse" : "row" }}
       gap={"16"}
       mx={{ base: 0, lg: 20 }}
-      my={{ base: 10, lg: 20 }}
+      my={{ base: 10, lg: 10 }}
       _hover={{ cursor: "pointer" }}
       alignItems={"center"}
     >
@@ -45,8 +45,8 @@ export default function ProjectCard({
         </CardBody>
       </Card>
       <Stack
-        my={{ base: 0, lg: 20 }}
-        gap={8}
+        
+        gap={2}
         textAlign={{ base: "center", lg: "left" }}
         w={{ base: "full", lg: "60%" }}
       >
