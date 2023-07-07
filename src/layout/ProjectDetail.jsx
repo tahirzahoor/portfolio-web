@@ -30,7 +30,6 @@ import { setProjects } from "../redux/projectSlice";
 import getProjects from "../services/getProjects";
 import OtherProjects from "../components/OtherProjects";
 
-
 const LinkButton = ({ title = "title", url }) => (
   <Link href={url} isExternal target="_blank">
     <Button
@@ -41,7 +40,7 @@ const LinkButton = ({ title = "title", url }) => (
       borderColor={"white"}
       _hover={{}}
       borderRadius={"full"}
-      px={{base:6, lg:10}}
+      px={{ base: 6, lg: 10 }}
     >
       {title}
     </Button>
@@ -61,9 +60,9 @@ const LinkIconButton = ({ link, platform }) => (
       border={"1px"}
       gap={2}
       fontWeight={"normal"}
-      p={{base:4, lg:7}}
-      m={{base:2, lg:5}}
-      fontSize={{base:"xl", lg:"2xl"}}
+      p={{ base: 4, lg: 7 }}
+      m={{ base: 2, lg: 5 }}
+      fontSize={{ base: "xl", lg: "2xl" }}
     >
       {platform == "android" ? "Play Store" : "App Store"}
       <Image src={platform == "android" ? PlayStore : ios} />
@@ -71,35 +70,32 @@ const LinkIconButton = ({ link, platform }) => (
   </Link>
 );
 
-const ProjectDesCard = ({ direction, description, image, logo, title }) => {
+const ProjectDesCard = ({ direction, description, image, title }) => {
   const { colorMode } = useColorMode();
 
   return (
     <Stack
-      mx={{base:0, lg:20}}
-      my={{base:5, lg:10}}
+      mx={{ base: 0, lg: 20 }}
+      my={{ base: 5, lg: 10 }}
       gap={5}
-      direction={{base:"column", lg:direction ? "row-reverse" : "row"}}
+      direction={{ base: "column", lg: direction ? "row-reverse" : "row" }}
       alignItems={"center"}
       justifyContent={"space-evenly"}
     >
       <Card
-        w={{base:"full", lg:"fit-content"}}
-        px={{base:5, lg:20}}
+        w={{ base: "full", lg: "fit-content" }}
+        px={{ base: 5, lg: 20 }}
         bgColor={"#E7ECF9"}
         borderRadius={"3xl"}
         position={"relative"}
         alignItems={"center"}
       >
-        <Image boxSize={{base:"200px", lg:"sm"}} src={image} />
-        <Image
-          left={0}
-          position={"absolute"}
-          boxSize={{base:"50px", lg:"80px"}}
-          src={logo}
-        />
+        <Image boxSize={{ base: "200px", lg: "sm" }} src={image} />
       </Card>
-      <Stack w={{base:"full", lg:96}} textAlign={{base:"center", lg:"left"}}>
+      <Stack
+        w={{ base: "full", lg: 96 }}
+        textAlign={{ base: "center", lg: "left" }}
+      >
         <Heading size={"md"} fontWeight={"medium"} color={"primary.200"}>
           <Text
             as={"span"}
@@ -123,15 +119,15 @@ const ProjectDesCard = ({ direction, description, image, logo, title }) => {
 
 const ImageCard = (image) => (
   <Card
-    w={{base:"full", lg:"fit-content"}}
+    w={{ base: "full", lg: "fit-content" }}
     bgColor={"#DFF2E9"}
-    px={{base:0, lg:28}}
+    px={{ base: 0, lg: 28 }}
     rounded={"2xl"}
     my={5}
-    mx={{base:0, lg:5}}
+    mx={{ base: 0, lg: 5 }}
     alignItems={"center"}
   >
-    <Image boxSize={{base:"200px", lg:"sm"}} src={image} />
+    <Image boxSize={{ base: "200px", lg: "sm" }} src={image} />
   </Card>
 );
 
@@ -139,8 +135,6 @@ export default function ProjectDetail() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
   const dispatch = useDispatch();
-
- 
 
   useEffect(() => {
     window.scrollTo({ top: "0px" });
@@ -161,8 +155,8 @@ export default function ProjectDetail() {
       <Box
         position={"relative"}
         color={"white"}
-        mx={{base:"-5", lg:"-16"}}
-        h={{base:"70vh", lg:"80vh"}}
+        mx={{ base: "-5", lg: "-16" }}
+        h={{ base: "70vh", lg: "80vh" }}
         bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor}`}
         display={"flex"}
         flexDir={"column"}
@@ -171,7 +165,7 @@ export default function ProjectDetail() {
         overflow={"hidden"}
       >
         <Box
-          mt={{base:16, lg:28}}
+          mt={{ base: 16, lg: 28 }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -192,9 +186,9 @@ export default function ProjectDetail() {
           </Box>
         </Box>
         <Image
-          position={{base:"absolute", lg:"inherit"}}
+          position={{ base: "absolute", lg: "inherit" }}
           bottom={0}
-          boxSize={{base:"fit-content", lg:"2xl"}}
+          boxSize={{ base: "fit-content", lg: "2xl" }}
           src={project.heroImage}
         />
       </Box>
@@ -203,50 +197,57 @@ export default function ProjectDetail() {
         <ProjectDesCard
           description={project.problemStatement}
           title={"Challenge"}
-          logo={project.logo}
           image={project.images ? project.images[0] : project.mainImage}
         />
         <ProjectDesCard
           description={project.solutionStatement}
           title={"Solution"}
-          logo={project.logo}
           image={project.images ? project.images[0] : project.mainImage}
           direction={true}
         />
       </Box>
 
       <Box my={5}>
-        <Heading my={5} size={"lg"} fontWeight={"medium"} textAlign={"center"}>
-          More high level images about the{" "}
-          <Text as={"span"} color={"primary.200"}>
-            {project.title}
-          </Text>{" "}
-        </Heading>
+        {project.images?.slice(2, project.images.length).length > 0 && (
+          <Heading
+            my={5}
+            size={"lg"}
+            fontWeight={"medium"}
+            textAlign={"center"}
+          >
+            More high level images about the{" "}
+            <Text as={"span"} color={"primary.200"}>
+              {project.title}
+            </Text>{" "}
+          </Heading>
+        )}
 
         <Box display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
-          {project.images?.map((item, index) => (
-            <ImageCard key={index} image={item} />
-          ))}
+          {project.images
+            ?.slice(2, project.images.length)
+            .map((item, index) => (
+              <ImageCard key={index} image={item} />
+            ))}
         </Box>
       </Box>
 
       <Box
         color={"black"}
         bgColor={"#DCE5EF"}
-        mx={{base:-5, lg:-16}}
+        mx={{ base: -5, lg: -16 }}
         display={"flex"}
-        justifyContent={{base:"center", lg:"space-around"}}
+        justifyContent={{ base: "center", lg: "space-around" }}
         py={5}
         px={2}
       >
         <Stack
-          gap={{base:"2", lg:"5"}}
-          w={{base:"full", lg:"fit-content"}}
+          gap={{ base: "2", lg: "5" }}
+          w={{ base: "full", lg: "fit-content" }}
           justifyContent={"center"}
         >
-          <Heading size={{base:"md", lg:"xl"}}>Heading</Heading>
+          <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
           <Heading
-            size={{base:"xs", lg:"md"}}
+            size={{ base: "xs", lg: "md" }}
             fontWeight={"medium"}
             color={"neutrals.300"}
           >
@@ -254,7 +255,7 @@ export default function ProjectDetail() {
           </Heading>
         </Stack>
         <Box>
-          <Heading size={{base:"md", lg:"xl"}}>{project.title}</Heading>
+          <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
           {project.links?.map((item, index) => (
             <LinkIconButton
               key={index}
@@ -267,61 +268,61 @@ export default function ProjectDetail() {
       <Box
         bgColor={colorMode === "light" ? "neutrals.30" : "neutrals.600"}
         my={10}
-        mx={{base:-5, lg:-16}}
+        mx={{ base: -5, lg: -16 }}
         color={"black"}
-        position={{base:"inherit", lg:"relative"}}
-        py={{base:10, lg:28}}
-        display={{base:"block", lg:"flex"}}
+        position={{ base: "inherit", lg: "relative" }}
+        py={{ base: 10, lg: 28 }}
+        display={{ base: "block", lg: "flex" }}
         alignItems={"center"}
         gap={5}
-        px={{base:10, lg:28}}
+        px={{ base: 10, lg: 28 }}
         overflow={"hidden"}
       >
         <Image src={project.comment?.image} boxSize={"sm"} zIndex={1} />
         <Box
           bgColor={"primary.200"}
-          position={{base:"inherit", lg:"absolute"}}
+          position={{ base: "inherit", lg: "absolute" }}
           zIndex={2}
-          mx={{base:5, lg:0}}
-          my={{base:2, lg:5}}
+          mx={{ base: 5, lg: 0 }}
+          my={{ base: 2, lg: 5 }}
           color={"white"}
           py={3}
           px={5}
           rounded={"full"}
-          left={{base:0, lg:"350px"}}
+          left={{ base: 0, lg: "350px" }}
           bottom={28}
         >
           <Heading size={"md"} textAlign={"center"}>
             {project.comment?.commenter}
           </Heading>
-          <Text noOfLines={1} textAlign={"center"} >
+          <Text noOfLines={1} textAlign={"center"}>
             {project.comment?.designation}
           </Text>
         </Box>
 
         <Card
-          w={{base:"full", lg:"96"}}
+          w={{ base: "full", lg: "96" }}
           h={"fit-content"}
-          px={{base:5, lg:16}}
+          px={{ base: 5, lg: 16 }}
           py={5}
           rounded={"lg"}
           border={"1px"}
           borderColor={"neutrals.50"}
-          m={{base:0, lg:20}}
-          my={{base:5, lg:0}}
+          m={{ base: 0, lg: 20 }}
+          my={{ base: 5, lg: 0 }}
         >
           <Text color={"neutrals.90"}>{project.comment?.text}</Text>
         </Card>
 
         <Image
-          display={{base:"none", lg:"flex"}}
+          display={{ base: "none", lg: "flex" }}
           src={Qutation}
           position={"absolute"}
           left={"500px"}
           top={"44"}
         />
         <Image
-          display={{base:"none", lg:"flex"}}
+          display={{ base: "none", lg: "flex" }}
           src={Qutation}
           position={"absolute"}
           left={"1000px"}
@@ -329,7 +330,7 @@ export default function ProjectDetail() {
         />
 
         <Image
-          display={{base:"none", lg:"flex"}}
+          display={{ base: "none", lg: "flex" }}
           src={Springs}
           position={"absolute"}
           boxSize={"1300px"}
@@ -341,7 +342,7 @@ export default function ProjectDetail() {
       <Box py={10} position={"relative"}>
         <Heading
           mx={5}
-          top={{base:"-5", lg:10}}
+          top={{ base: "-5", lg: 10 }}
           size={"xl"}
           fontWeight={"medium"}
           position={"absolute"}
@@ -397,7 +398,7 @@ export default function ProjectDetail() {
           centerSlidePercentage={33.33}
         >
           {projects.map((item) => (
-          <OtherProjects key={item.id} logo={item.logo} id={item.id} />
+            <OtherProjects key={item.id} logo={item.logo} id={item.id} />
           ))}
         </Carousel>
       </Box>

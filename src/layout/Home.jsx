@@ -50,6 +50,7 @@ import { useForm } from "react-hook-form";
 import sendEmail from "../utils/sendEmail";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 export default function Home() {
   const { colorMode } = useColorMode();
   const [isOpen, setIsOpen] = useState(true);
@@ -204,17 +205,16 @@ export default function Home() {
               color={"primary.200"}
               fontSize={"4xl"}
               display={"flex"}
-              icon={ <motion.div
-             
-                animate={{
-                  
-                  scale: [1, 0.8, 1],
-                  transition: { duration:1, repeat: Infinity }, 
-                }}
-                
-              >
-                <BsArrowDownShort size={32}  />
-              </motion.div>}
+              icon={
+                <motion.div
+                  animate={{
+                    scale: [1, 0.8, 1],
+                    transition: { duration: 1, repeat: Infinity },
+                  }}
+                >
+                  <BsArrowDownShort size={32} />
+                </motion.div>
+              }
             />
           </Box>
           <Heading
@@ -270,7 +270,7 @@ export default function Home() {
             >
               150+
             </Heading>
-            <Text  textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
+            <Text textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
               Projects Completed
             </Text>
           </HStack>
@@ -305,17 +305,17 @@ export default function Home() {
             his technical expertise with his passion for social impact
           </Text>
           <Box>
-           <Link to={'/about'}>
-           <Button
-              variant={"unstyled"}
-              gap={2}
-              color={"primary.400"}
-              fontWeight={"bold"}
-              rightIcon={<BsArrowRight />}
-            >
-              READ MORE
-            </Button>
-           </Link>
+            <Link to={"/about"}>
+              <Button
+                variant={"unstyled"}
+                gap={2}
+                color={"primary.400"}
+                fontWeight={"bold"}
+                rightIcon={<BsArrowRight />}
+              >
+                READ MORE
+              </Button>
+            </Link>
           </Box>
         </Stack>
       </Box>

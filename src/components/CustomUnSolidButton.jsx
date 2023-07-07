@@ -14,9 +14,9 @@ const CustomUnSolidButton = () => {
     <Box>
       <Box display={{base:"none" , lg:"flex"}}>
       <ul>
-      <li>
+      <li className="listItem">
        View More 
-        <span></span>
+        <span className="listItemSpan"></span>
         <span></span>
         <span></span>
         <span></span>
