@@ -56,7 +56,7 @@ export default function ProjectMainCard({
             animate={{ scale: isHovered ? 1.1 : 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Image boxSize={"xs"} src={projectImage} mt={5} />
+            <Image boxSize={"xs"} src={mainImage} mt={5} />
           </motion.div>
         </CardBody>
       </Card>
