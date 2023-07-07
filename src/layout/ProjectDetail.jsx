@@ -117,16 +117,17 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
   );
 };
 
-const ImageCard = (image) => (
+const ImageCard = ({image , bColor}) => (
   <Card
     w={{ base: "full", lg: "fit-content" }}
-    bgColor={"#DFF2E9"}
+    bgColor={bColor}
     px={{ base: 0, lg: 28 }}
     rounded={"2xl"}
     my={5}
     mx={{ base: 0, lg: 5 }}
     alignItems={"center"}
   >
+    
     <Image boxSize={{ base: "200px", lg: "sm" }} src={image} />
   </Card>
 );
@@ -135,6 +136,8 @@ export default function ProjectDetail() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
   const dispatch = useDispatch();
+  const [startColor, setStartColor] = useState();
+  const [endColor, setEndColor] = useState();
 
   useEffect(() => {
     window.scrollTo({ top: "0px" });
@@ -147,17 +150,21 @@ export default function ProjectDetail() {
 
     fetchProjects();
     fetchProject();
+    setStartColor(project.colorScheme?.startColor);
+    setEndColor(project.colorScheme?.endColor);
   }, [id]);
   const projects = useSelector((state) => state.projects);
   const { colorMode } = useColorMode();
+
   return (
     <Box>
       <Box
         position={"relative"}
         color={"white"}
+      
         mx={{ base: "-5", lg: "-16" }}
         h={{ base: "70vh", lg: "80vh" }}
-        bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor}`}
+        bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor})`}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}
@@ -226,7 +233,7 @@ export default function ProjectDetail() {
           {project.images
             ?.slice(2, project.images.length)
             .map((item, index) => (
-              <ImageCard key={index} image={item} />
+              <ImageCard key={index} image={item} bColor={project.colorScheme?.primaryColor} />
             ))}
         </Box>
       </Box>

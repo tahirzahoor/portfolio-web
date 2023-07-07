@@ -17,9 +17,9 @@ const CustomUnSolidButton = () => {
       <li className="listItem">
        View More 
         <span className="listItemSpan"></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span className="listItemSpan"></span>
+        <span className="listItemSpan"></span>
+        <span className="listItemSpan"></span>
       </li>
     </ul>
     </Box>
