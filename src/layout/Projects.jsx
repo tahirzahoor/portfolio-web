@@ -31,7 +31,7 @@ export default function Projects() {
   const [isLargerThanLg] = useMediaQuery("(min-width: 64em)");
   const [noOfProject, setNoOfProject] = useState(6);
   useEffect(() => {
-    window.scrollTo({ top: "0px"});
+  
     const fetchProjects = async () => {
       dispatch(
         setProjects(
