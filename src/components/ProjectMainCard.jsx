@@ -23,19 +23,21 @@ export default function ProjectMainCard({
   const { colorMode } = useColorMode();
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <Stack _hover={{ cursor: "pointer"}} my={5} >
+    <Stack _hover={{ cursor: "pointer"}} my={5}
+    onMouseEnter={() => {
+      setIsHovered(true);
+    }}
+    onMouseLeave={() => {
+      setIsHovered(false);
+    }}
+    >
       <Card
         px={{ base: "5", lg: "20" }}
         py={{ base: "0", lg: "2" }}
         bgColor={"#E7ECF9"}
         border={"1px"}
         borderColor={"neutrals.50"}
-        onMouseEnter={() => {
-          setIsHovered(true);
-        }}
-        onMouseLeave={() => {
-          setIsHovered(false);
-        }}
+        
         _hover={{ boxShadow:"2xl"}}
         m={5}
       >
