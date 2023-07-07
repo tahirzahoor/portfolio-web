@@ -86,7 +86,7 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
         <Image  width={"lg"} src={image} />
       </Card>
       <Stack
-        w={{ base: "full", lg: "md" }}
+        w={{ base: "full", lg: "40%" }}
         textAlign={{ base: "center", lg: "left" }}
       >
         <Heading size={"md"} fontWeight={"medium"} color={"primary.200"}>
@@ -275,7 +275,7 @@ export default function ProjectDetail() {
         px={{ base: 10, lg: 28 }}
         overflow={"hidden"}
       >
-        <Image src={project.comment?.image} boxSize={"sm"} zIndex={1} />
+        <Image  src={project.comment?.image} boxSize={"sm"} zIndex={1} />
         <Box
           bgColor={"primary.200"}
           position={{ base: "inherit", lg: "absolute" }}

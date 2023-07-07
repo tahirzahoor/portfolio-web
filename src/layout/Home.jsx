@@ -320,7 +320,7 @@ export default function Home() {
           </Box>
         </Stack>
       </Box>
-      <Box my={10}>
+      <Box mt={16} mb={10}>
         <Heading
           textAlign={"center"}
           as={"h6"}
