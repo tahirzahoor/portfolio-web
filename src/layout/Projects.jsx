@@ -146,15 +146,7 @@ export default function Projects() {
         my={5}
         mx={{base:-5 , lg:-16}}
       >
-        {projects.slice(0, noOfProject).map((item) => (
-          <ProjectMainCard
-            key={item.id}
-            title={item.title}
-            category={item.category}
-            mainImage={item.mainImage}
-            id={item.id}
-          />
-        ))}
+       
         {projects.slice(0, noOfProject).map((item) => (
           <ProjectMainCard
             key={item.id}
