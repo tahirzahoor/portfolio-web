@@ -24,7 +24,7 @@ export default function ProjectMainCard({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Link to={`/project/${id}`}>
-      <Stack _hover={{ cursor: "pointer"}}
+      <Stack m={{base:2 , lg:0}} _hover={{ cursor: "pointer"}}
     onMouseEnter={() => {
       setIsHovered(true);
     }}
