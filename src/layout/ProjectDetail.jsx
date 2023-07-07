@@ -237,7 +237,7 @@ export default function ProjectDetail() {
         </Box>
       </Box>
 
-      <Box
+      {(project.links?.platform == "android" || project.links?.platform == "android") && <Box
         color={"black"}
         bgColor={"#DCE5EF"}
         mx={{ base: -5, lg: -16 }}
@@ -270,7 +270,7 @@ export default function ProjectDetail() {
             />
           ))}
         </Box>
-      </Box>
+      </Box>}
       <Box
         bgColor={colorMode === "light" ? "neutrals.30" : "neutrals.600"}
         my={10}
@@ -345,7 +345,7 @@ export default function ProjectDetail() {
         />
       </Box>
 
-      <Box py={10} position={"relative"}>
+      {projects.length>4 && <Box py={10} position={"relative"}>
         <Heading
           mx={5}
           top={{ base: "-5", lg: 10 }}
@@ -407,7 +407,7 @@ export default function ProjectDetail() {
             <OtherProjects key={item.id} logo={item.logo} id={item.id} />
           ))}
         </Carousel>
-      </Box>
+      </Box>}
     </Box>
   );
 }
