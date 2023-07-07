@@ -163,7 +163,7 @@ export default function ProjectDetail() {
         color={"white"}
         mx={{base:"-5", lg:"-16"}}
         h={{base:"70vh", lg:"80vh"}}
-        bgGradient="linear(to bottom, #88B2C5, #80CFAF)"
+        bgGradient={`linear(to bottom, ${project.colorScheme?.startColor}, ${project.colorScheme?.endColor}`}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}

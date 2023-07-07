@@ -11,17 +11,33 @@ import {
 } from "@chakra-ui/react";
 import projectImage from "../assets/images/projectImage.svg";
 import { AiOutlineRight } from "react-icons/ai";
-import {Link} from "react-router-dom"
-export default function ProjectMainCard({title = "Medesto" , category = "Category", mainImage , id}) {
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
+export default function ProjectMainCard({
+  title = "Medesto",
+  category = "Category",
+  mainImage,
+  id,
+}) {
   const { colorMode } = useColorMode();
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <Stack _hover={{ cursor: "pointer" }} mt={5} mx={["0", 5]}>
+    <Stack _hover={{ cursor: "pointer"}} my={5} >
       <Card
-        px={{base:"5", lg:"16"}}
-        py={{base:"0", lg:"2"}}
+        px={{ base: "5", lg: "20" }}
+        py={{ base: "0", lg: "2" }}
         bgColor={"#E7ECF9"}
         border={"1px"}
         borderColor={"neutrals.50"}
+        onMouseEnter={() => {
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+        }}
+        _hover={{ boxShadow:"2xl"}}
+        m={5}
       >
         <CardBody>
           <Heading color={"black"} textAlign={"center"} size={"md"}>
@@ -32,26 +48,61 @@ export default function ProjectMainCard({title = "Medesto" , category = "Categor
             fontWeight={"medium"}
             color={"primary.200"}
             textAlign={"center"}
-            size={{base:"sm", lg:"md"}}
+            size={{ base: "sm", lg: "md" }}
           >
             {category}
           </Heading>
-          <Image width={"350px"} src={mainImage} mt={5} />
+          <motion.div
+            animate={{ scale: isHovered ? 1.1 : 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image boxSize={"xs"} src={projectImage} mt={5} />
+          </motion.div>
         </CardBody>
       </Card>
-      <Box display={"flex"} justifyContent={"center"}>
-      <Link to={`/project/${id}`}>
-      <Button
-        mt={5}
-        variant={"unstyled"}
-        rightIcon={<AiOutlineRight />}
-        display={"flex"}
-        color={"primary.200"}
+      <Box
+        display={{ base: "none", lg: "flex" }}
+        justifyContent={"center"}
+        h={"50px"}
       >
-        {" "}
-        View More
-      </Button>
-      </Link>
+        {isHovered && (
+          <Link to={`/project/${id}`}>
+            <motion.div
+              initial={{ y: -50 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Button
+                mt={5}
+                variant={"unstyled"}
+                rightIcon={<AiOutlineRight />}
+                display={"flex"}
+                color={"primary.200"}
+              >
+                {" "}
+                View More
+              </Button>
+            </motion.div>
+          </Link>
+        )}
+      </Box>
+      <Box
+        display={{ base: "flex", lg: "none" }}
+        justifyContent={"center"}
+        h={"50px"}
+      >
+        <Link to={`/project/${id}`}>
+          <Button
+            mt={5}
+            variant={"unstyled"}
+            rightIcon={<AiOutlineRight />}
+            display={"flex"}
+            color={"primary.200"}
+          >
+            {" "}
+            View More
+          </Button>
+        </Link>
       </Box>
     </Stack>
   );

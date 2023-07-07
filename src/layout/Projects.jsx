@@ -155,6 +155,17 @@ export default function Projects() {
             id={item.id}
           />
         ))}
+        {projects.slice(0, noOfProject).map((item) => (
+          <ProjectMainCard
+            key={item.id}
+            title={item.title}
+            category={item.category}
+            mainImage={item.mainImage}
+            id={item.id}
+          />
+        ))}
+        
+        
       </Stack>
       {projects.length > noOfProject && (
         <Box display={"flex"} justifyContent={"center"} my={10}>
