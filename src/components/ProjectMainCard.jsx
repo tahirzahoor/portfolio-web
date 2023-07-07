@@ -23,7 +23,8 @@ export default function ProjectMainCard({
   const { colorMode } = useColorMode();
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <Stack _hover={{ cursor: "pointer"}} my={5}
+    <Link to={`/project/${id}`}>
+      <Stack _hover={{ cursor: "pointer"}} my={5}
     onMouseEnter={() => {
       setIsHovered(true);
     }}
@@ -107,5 +108,7 @@ export default function ProjectMainCard({
         </Link>
       </Box>
     </Stack>
+    </Link>
+    
   );
 }
