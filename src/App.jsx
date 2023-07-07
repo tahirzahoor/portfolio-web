@@ -13,7 +13,7 @@ function App() {
   
 
   return (
-    <Router>
+    <Router basename="/portfolio-web" >
       <Header />
       <Box px={{base:"5", lg:"16"}}>
         <Routes>
