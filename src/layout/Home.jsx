@@ -49,8 +49,7 @@ import getCategories from "./../services/getCategories";
 import { useForm } from "react-hook-form";
 import sendEmail from "../utils/sendEmail";
 import { Link } from "react-router-dom";
-
-
+import { motion } from "framer-motion";
 export default function Home() {
   const { colorMode } = useColorMode();
   const [isOpen, setIsOpen] = useState(true);
@@ -69,14 +68,12 @@ export default function Home() {
   } = useForm();
 
   const onSubmit = (data) => {
-     sendEmail(data);
+    sendEmail(data);
     setMailResponse("Email Sent Successfully");
   };
 
   useEffect(() => {
-    
     const fetchProjects = async () => {
-    
       dispatch(
         setProjects(
           await getProjects(activeCategory == "All" ? "" : activeCategory)
@@ -104,7 +101,7 @@ export default function Home() {
 
   const handleCloseModal = () => {
     setMailResponse(false);
-    reset()
+    reset();
   };
 
   return (
@@ -153,12 +150,27 @@ export default function Home() {
               </Heading>
             </Stack>
             <Box>
-             <Link to={'/contact'}> <CustomButton title="Hire Me" /></Link>
+              <Link to={"/contact"}>
+                {" "}
+                <CustomButton title="Hire Me" />
+              </Link>
             </Box>
             <Box display={"flex"} gap={{ base: "3", lg: "5" }}>
-            <CustomIconButton IconOption={<IoIosMail />} type={"email"} link={"tahirzahoor456@gmail.com"} />
-          <CustomIconButton IconOption={<FaLinkedinIn/>} type={"linkedin"} link={"https://www.linkedin.com/in/tahir-zahoor-228499124/"}/>
-          <CustomIconButton IconOption={<BsWhatsapp />} type={"whatsapp"} link={"+923044040187"}/>
+              <CustomIconButton
+                IconOption={<IoIosMail />}
+                type={"email"}
+                link={"tahirzahoor456@gmail.com"}
+              />
+              <CustomIconButton
+                IconOption={<FaLinkedinIn />}
+                type={"linkedin"}
+                link={"https://www.linkedin.com/in/tahir-zahoor-228499124/"}
+              />
+              <CustomIconButton
+                IconOption={<BsWhatsapp />}
+                type={"whatsapp"}
+                link={"+923044040187"}
+              />
             </Box>
           </Stack>
           <Box mt={{ base: "5", lg: "0" }}>
@@ -192,7 +204,17 @@ export default function Home() {
               color={"primary.200"}
               fontSize={"4xl"}
               display={"flex"}
-              icon={<BsArrowDownShort />}
+              icon={ <motion.div
+             
+                animate={{
+                  
+                  scale: [1, 0.8, 1],
+                  transition: { duration:1, repeat: Infinity }, 
+                }}
+                
+              >
+                <BsArrowDownShort size={32}  />
+              </motion.div>}
             />
           </Box>
           <Heading
@@ -224,6 +246,7 @@ export default function Home() {
               as={"h6"}
               size={{ base: "md", lg: "4xl" }}
               color={"primary.200"}
+              fontWeight={"normal"}
             >
               8+
             </Heading>
@@ -243,11 +266,12 @@ export default function Home() {
               as={"h6"}
               size={{ base: "md", lg: "4xl" }}
               color={"primary.200"}
+              fontWeight={"normal"}
             >
-              8+
+              150+
             </Heading>
-            <Text textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
-              YEARS OF EXPERIENCE
+            <Text  textAlign={"center"} fontSize={{ base: "sm", lg: "2xl" }}>
+              Projects Completed
             </Text>
           </HStack>
         </Stack>
@@ -281,7 +305,8 @@ export default function Home() {
             his technical expertise with his passion for social impact
           </Text>
           <Box>
-            <Button
+           <Link to={'/about'}>
+           <Button
               variant={"unstyled"}
               gap={2}
               color={"primary.400"}
@@ -290,6 +315,7 @@ export default function Home() {
             >
               READ MORE
             </Button>
+           </Link>
           </Box>
         </Stack>
       </Box>
@@ -520,7 +546,9 @@ export default function Home() {
           projects, or creative ideas to be part of your vision.
         </Text>
         <Box>
-          <Link to={"/contact"}><CustomButton title="CONTACT ME"  /></Link>
+          <Link to={"/contact"}>
+            <CustomButton title="CONTACT ME" />
+          </Link>
         </Box>
       </Stack>
     </Box>

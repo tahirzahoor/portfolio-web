@@ -11,6 +11,7 @@ import {
 import CustomUnSolidButton from "./CustomUnSolidButton";
 import MockProject from "../assets/images/MockProject.svg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 export default function ProjectCard({
   id,
   odd = false,
@@ -31,19 +32,23 @@ export default function ProjectCard({
     >
       <Card
         bgColor={colorMode == "light" ? "primary.50" : "primary.50"}
-       
- 
         borderRadius={"3xl"}
+        p={{base:0 , lg:5}}
       >
         <CardBody display={"flex"}>
-          <Image width={{base:"xl",lg:"2xl"}}  src={image} />
+          <motion.div
+            whileHover={{ scale: 1.1 }} 
+            transition={{duration:0.5}}
+          >
+            <Image width={"md"}  src={image} />
+          </motion.div>
         </CardBody>
       </Card>
       <Stack
         my={{ base: 0, lg: 20 }}
         gap={8}
         textAlign={{ base: "center", lg: "left" }}
-        w={{base:"full",lg:"60%"}}
+        w={{ base: "full", lg: "60%" }}
       >
         <Heading
           as={"h6"}
