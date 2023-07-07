@@ -3,26 +3,17 @@ import { IoIosArrowForward } from "react-icons/io";
 
 // export default function CustomUnSolidButton() {
 //   return (
-//     <Button
-//       fontSize={"xl"}
-//       fontWeight={"normal"}
-//       color={"primary.200"}
-//       border={"1px"}
-//       p={4}
-//       display={"flex"}
-//       variant={"unstyled"}
-//       rightIcon={<IoIosArrowForward />}
-//     >
-//       View More
-//     </Button>
+//     
 //   );
 // }
 import React from "react";
 import "../style/unSolidButton.css";
-import { Button, Text } from "@chakra-ui/react";
+import { Box, Button, Text } from "@chakra-ui/react";
 const CustomUnSolidButton = () => {
   return (
-    <ul>
+    <Box>
+      <Box display={{base:"none" , lg:"flex"}}>
+      <ul>
       <li>
        View More 
         <span></span>
@@ -31,6 +22,22 @@ const CustomUnSolidButton = () => {
         <span></span>
       </li>
     </ul>
+    </Box>
+    <Box display={{base:"felx" , lg:"none"}}>
+      <Button
+          fontSize={"xl"}
+          fontWeight={"normal"}
+          color={"primary.200"}
+          border={"1px"}
+          p={4}
+          display={"flex"}
+          variant={"unstyled"}
+          rightIcon={<IoIosArrowForward />}
+        >
+          View More
+        </Button>
+    </Box>
+    </Box>
   );
 };
 
