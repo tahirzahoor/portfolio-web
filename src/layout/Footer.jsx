@@ -14,8 +14,8 @@ export default function Footer() {
       bgSize="cover"
       bgPosition="center"
       bgRepeat="no-repeat"
-      py={{base:"5", lg:"10"}}
-      px={{base:"5", lg:"16"}}
+      py={{ base: "5", lg: "10" }}
+      px={{ base: "5", lg: "16" }}
     >
       <Card
         px={5}
@@ -25,7 +25,7 @@ export default function Footer() {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Stack direction={{base:"column", lg:"row  "}} justifyContent={"space-evenly"}>
+        <Stack direction={{ base: "column", lg: "row  " }} justifyContent={"space-evenly"}>
           <HStack>
             <Image src={locationIcon} />
             <Text fontSize={"sm"}>123-A abcd street city, Country</Text>
@@ -39,10 +39,10 @@ export default function Footer() {
             <Text fontSize={"sm"}>123-A abcd street city, Country</Text>
           </HStack>
         </Stack>
-        <Stack gap={{base:"3", lg:"5"}} direction={["column", "row"]}>
+        <Stack gap={{ base: "3", lg: "5" }} direction={["column", "row"]}>
           <CustomIconButton IconOption={<IoIosMail />} type={"email"} link={"tahirzahoor456@gmail.com"} />
-          <CustomIconButton IconOption={<FaLinkedinIn/>} type={"linkedin"} link={"https://www.linkedin.com/in/tahir-zahoor-228499124/"}/>
-          <CustomIconButton IconOption={<BsWhatsapp />} type={"whatsapp"} link={"+923044040187"}/>
+          <CustomIconButton IconOption={<FaLinkedinIn />} type={"linkedin"} link={"https://www.linkedin.com/in/tahir-zahoor-228499124/"} />
+          <CustomIconButton IconOption={<BsWhatsapp />} type={"whatsapp"} link={"+923044040187"} />
         </Stack>
       </Card>
     </Box>

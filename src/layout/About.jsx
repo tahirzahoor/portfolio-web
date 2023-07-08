@@ -14,17 +14,17 @@ import AboutImage from "../assets/images/AboutImage.svg";
 import { useEffect } from "react";
 export default function About() {
   const { colorMode } = useColorMode();
-  useEffect(()=>{
-    window.scrollTo({ top: "0px"});
-  },[])
+  useEffect(() => {
+    window.scrollTo({ top: "0px" });
+  }, [])
   return (
     <Box >
-      <Box minH={{lg:"85vh"}} display={{base:"block", lg:"flex"}} alignItems={"center"} gap={"44"} mb={10} >
+      <Box minH={{ lg: "85vh" }} display={{ base: "block", lg: "flex" }} alignItems={"center"} gap={"44"} mb={10} >
         <Heading
-        mt={10}
+          mt={10}
           size={"lg"}
           fontWeight={"medium"}
-          textAlign={{base:"center", lg:"left"}}
+          textAlign={{ base: "center", lg: "left" }}
         >
           "As an{" "}
           <Text as={"span"} color={"primary.200"}>
@@ -33,11 +33,11 @@ export default function About() {
           , you're not just building apps you're building bridges that connect
           people, empower businesses, and revolutionize the digital landscape."
         </Heading>
-        <Image mx={{base:"auto"}} src={AboutImage} boxSize={"xl"} />
+        <Image mx={{ base: "auto" }} src={AboutImage} boxSize={"xl"} />
       </Box>
 
-      <Box my={5} display={"flex"} gap={5} flexDirection={{base:"column", lg:"row"}}>
-        <Stack textAlign={{base:"center", lg:"left"}}>
+      <Box my={5} display={"flex"} gap={5} flexDirection={{ base: "column", lg: "row" }}>
+        <Stack textAlign={{ base: "center", lg: "left" }}>
           <Heading
             color={"primary.200"}
             as={"h6"}
@@ -89,7 +89,7 @@ export default function About() {
 
         <Stack direction={"row"} position={"relative"} w={"full"} my={5}>
           <Box
-            display={{base:"none", lg:"block"}}
+            display={{ base: "none", lg: "block" }}
             w={1}
             border={"2px"}
             borderColor={"primary.200"}
@@ -107,7 +107,7 @@ export default function About() {
                 sx={{
                   "::before": {
                     content: '""',
-                    display: {base:"none", lg:"inline-block"},
+                    display: { base: "none", lg: "inline-block" },
                     width: "8px",
                     height: "8px",
                     borderRadius: "50%",
@@ -149,7 +149,7 @@ export default function About() {
                 sx={{
                   "::before": {
                     content: '""',
-                    display: {base:"none", lg:"inline-block"},
+                    display: { base: "none", lg: "inline-block" },
                     width: "8px",
                     height: "8px",
                     borderRadius: "50%",

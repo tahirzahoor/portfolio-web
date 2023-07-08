@@ -80,10 +80,10 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
       gap={20}
       direction={{ base: "column", lg: direction ? "row-reverse" : "row" }}
       alignItems={"center"}
-      
+
     >
       <Card p={5} bgColor={"#E7ECF9"} borderRadius={"3xl"} alignItems={"center"}>
-        <Image  width={"lg"} src={image} />
+        <Image width={"lg"} src={image} />
       </Card>
       <Stack
         w={{ base: "full", lg: "40%" }}
@@ -227,41 +227,41 @@ export default function ProjectDetail() {
 
       {(project.links?.platform == "android" ||
         project.links?.platform == "android") && (
-        <Box
-          color={"black"}
-          bgColor={"#DCE5EF"}
-          mx={{ base: -5, lg: -16 }}
-          display={"flex"}
-          justifyContent={{ base: "center", lg: "space-around" }}
-          py={5}
-          px={2}
-        >
-          <Stack
-            gap={{ base: "2", lg: "5" }}
-            w={{ base: "full", lg: "fit-content" }}
-            justifyContent={"center"}
+          <Box
+            color={"black"}
+            bgColor={"#DCE5EF"}
+            mx={{ base: -5, lg: -16 }}
+            display={"flex"}
+            justifyContent={{ base: "center", lg: "space-around" }}
+            py={5}
+            px={2}
           >
-            <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
-            <Heading
-              size={{ base: "xs", lg: "md" }}
-              fontWeight={"medium"}
-              color={"neutrals.300"}
+            <Stack
+              gap={{ base: "2", lg: "5" }}
+              w={{ base: "full", lg: "fit-content" }}
+              justifyContent={"center"}
             >
-              Have a look on my Work
-            </Heading>
-          </Stack>
-          <Box>
-            <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
-            {project.links?.map((item, index) => (
-              <LinkIconButton
-                key={index}
-                platform={item.platform}
-                link={item.link}
-              />
-            ))}
+              <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
+              <Heading
+                size={{ base: "xs", lg: "md" }}
+                fontWeight={"medium"}
+                color={"neutrals.300"}
+              >
+                Have a look on my Work
+              </Heading>
+            </Stack>
+            <Box>
+              <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
+              {project.links?.map((item, index) => (
+                <LinkIconButton
+                  key={index}
+                  platform={item.platform}
+                  link={item.link}
+                />
+              ))}
+            </Box>
           </Box>
-        </Box>
-      )}
+        )}
       <Box
         bgColor={colorMode === "light" ? "neutrals.30" : "neutrals.600"}
         my={10}
@@ -275,7 +275,7 @@ export default function ProjectDetail() {
         px={{ base: 10, lg: 28 }}
         overflow={"hidden"}
       >
-        <Image  src={project.comment?.image} boxSize={"sm"} zIndex={1} />
+        <Image src={project.comment?.image} boxSize={"sm"} zIndex={1} />
         <Box
           bgColor={"primary.200"}
           position={{ base: "inherit", lg: "absolute" }}

@@ -8,7 +8,7 @@ const getCategories = async () => {
     const categories = data.docs.map((doc) => doc.data().category);
     const uniqueCategories = [...new Set(categories)].filter(
       (category) => category
-    ); 
+    );
 
     return uniqueCategories;
   } catch (error) {

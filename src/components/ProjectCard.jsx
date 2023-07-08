@@ -33,19 +33,19 @@ export default function ProjectCard({
       <Card
         bgColor={colorMode == "light" ? "primary.50" : "primary.50"}
         borderRadius={"3xl"}
-        p={{base:0 , lg:5}}
+        p={{ base: 0, lg: 5 }}
       >
         <CardBody display={"flex"}>
           <motion.div
-            whileHover={{ scale: 1.1 }} 
-            transition={{duration:0.5}}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5 }}
           >
-            <Image width={"md"}  src={image} />
+            <Image width={"md"} src={image} />
           </motion.div>
         </CardBody>
       </Card>
       <Stack
-        
+
         gap={2}
         textAlign={{ base: "center", lg: "left" }}
         w={{ base: "full", lg: "60%" }}

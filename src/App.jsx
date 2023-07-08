@@ -10,12 +10,12 @@ import { Box } from "@chakra-ui/react";
 
 
 function App() {
-  
+
 
   return (
     <Router basename="/portfolio-web" >
       <Header />
-      <Box px={{base:"5", lg:"16"}}>
+      <Box px={{ base: "5", lg: "16" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

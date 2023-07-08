@@ -31,7 +31,7 @@ export default function Projects() {
   const [isLargerThanLg] = useMediaQuery("(min-width: 64em)");
   const [noOfProject, setNoOfProject] = useState(6);
   useEffect(() => {
-  
+
     const fetchProjects = async () => {
       dispatch(
         setProjects(
@@ -58,7 +58,7 @@ export default function Projects() {
     <Box >
       <Box
         minH={{ base: "44", lg: "80vh" }}
-        mx={{ base: -5,  lg: -16 }}
+        mx={{ base: -5, lg: -16 }}
         bgImage={heroImage}
         bgSize={"cover"}
         textAlign={"center"}
@@ -66,7 +66,7 @@ export default function Projects() {
         flexDir={"column"}
         gap={4}
         justifyContent={"center"}
-        mb={{base:0 , lg:20}}
+        mb={{ base: 0, lg: 20 }}
       >
         <Heading mt={{ base: 5, lg: 16 }}>Projects</Heading>
         <Text fontFamily={"custom"}>
@@ -144,10 +144,10 @@ export default function Projects() {
         flexWrap={"wrap"}
         justifyContent={"center"}
         my={5}
-        mx={{base:-5 , lg:-16}}
+        mx={{ base: -5, lg: -16 }}
         gap={5}
       >
-       
+
         {projects.slice(0, noOfProject).map((item) => (
           <ProjectMainCard
             key={item.id}
@@ -157,9 +157,9 @@ export default function Projects() {
             id={item.id}
           />
         ))}
-        
-        
-        
+
+
+
       </Stack>
       {projects.length > noOfProject && (
         <Box display={"flex"} justifyContent={"center"} my={10}>

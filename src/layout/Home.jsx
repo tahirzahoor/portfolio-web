@@ -274,7 +274,7 @@ export default function Home() {
               Projects Completed
             </Text>
           </HStack>
-        
+
         </Stack>
         <Stack gap={3} textAlign={{ base: "center", lg: "left" }}>
           <Heading
@@ -395,7 +395,7 @@ export default function Home() {
               category={item.category}
             />
           ))}
-          
+
         </Box>
       </Box>
       <Box mt={20}>
@@ -492,7 +492,7 @@ export default function Home() {
                 <Textarea
                   h={"36"}
                   border={"1px"}
-                 borderColor={"neutrals.40"}
+                  borderColor={"neutrals.40"}
                   placeholder="Describe your thoughts"
                   _placeholder={{
                     fontFamily: "custom",

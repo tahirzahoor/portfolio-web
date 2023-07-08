@@ -12,8 +12,6 @@ const getProjects = async (category) => {
       projects = projects.filter((project) => project.category === category);
     }
 
-
-
     return projects;
   } catch (error) {
     console.error("Error fetching projects:", error);

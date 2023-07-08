@@ -59,7 +59,7 @@ export default function PreviousCompnies() {
           onMouseLeave={() => {
             setGoogle(!google);
           }}
-          w={{base:"150px", lg:"300"}}
+          w={{ base: "150px", lg: "300" }}
           h="100px"
           bgSize={"contain"}
           bgImage={google ? googleColorless : colored_2}
@@ -74,7 +74,7 @@ export default function PreviousCompnies() {
           onMouseLeave={() => {
             setfedex(!fedex);
           }}
-          w={{base:"150px", lg:"300"}}
+          w={{ base: "150px", lg: "300" }}
           h="100px"
           bgSize={"contain"}
           bgImage={fedex ? feedExColorless : colored_4}

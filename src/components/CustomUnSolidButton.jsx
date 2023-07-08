@@ -12,19 +12,19 @@ import { Box, Button, Text } from "@chakra-ui/react";
 const CustomUnSolidButton = () => {
   return (
     <Box>
-      <Box display={{base:"none" , lg:"flex"}}>
-      <ul>
-      <li className="listItem">
-       View More 
-        <span className="listItemSpan"></span>
-        <span className="listItemSpan"></span>
-        <span className="listItemSpan"></span>
-        <span className="listItemSpan"></span>
-      </li>
-    </ul>
-    </Box>
-    <Box display={{base:"felx" , lg:"none"}}>
-      <Button
+      <Box display={{ base: "none", lg: "flex" }}>
+        <ul>
+          <li className="listItem">
+            View More
+            <span className="listItemSpan"></span>
+            <span className="listItemSpan"></span>
+            <span className="listItemSpan"></span>
+            <span className="listItemSpan"></span>
+          </li>
+        </ul>
+      </Box>
+      <Box display={{ base: "felx", lg: "none" }}>
+        <Button
           fontSize={"xl"}
           fontWeight={"normal"}
           color={"primary.200"}
@@ -36,7 +36,7 @@ const CustomUnSolidButton = () => {
         >
           View More
         </Button>
-    </Box>
+      </Box>
     </Box>
   );
 };
