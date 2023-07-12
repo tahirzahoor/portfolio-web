@@ -9,7 +9,7 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import projectImage from "../assets/images/projectImage.svg";
+import MockProject from "../assets/images/MockProject.svg";
 import { AiOutlineRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -20,7 +20,7 @@ export default function ProjectMainCard({
   mainImage,
   id,
 }) {
-  const { colorMode } = useColorMode();
+  
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Link to={`/project/${id}`}>
@@ -59,7 +59,7 @@ export default function ProjectMainCard({
               animate={{ scale: isHovered ? 1.1 : 1 }}
               transition={{ duration: 0.5 }}
             >
-              <Image width={"md"} src={mainImage} mt={5} />
+              <Image width={"sm"} src={mainImage?mainImage:MockProject} mt={5}   />
             </motion.div>
           </CardBody>
         </Card>

@@ -92,7 +92,7 @@ export default function Projects() {
             option={"All"}
             active={activeCategory == "All"}
           />
-          {category.slice(0, isLargerThanLg ? 4 : 2).map((item, index) => (
+          {category.slice(0, isLargerThanLg ? 4 : 0).map((item, index) => (
             <ListButton
               onlClickHandler={handelListButton}
               key={index}
@@ -101,7 +101,7 @@ export default function Projects() {
             />
           ))}
 
-          {category.length > (isLargerThanLg ? 4 : 2) && (
+          {category.length > (isLargerThanLg ? 4 : 0) && (
             <Menu>
               <MenuButton
                 color={colorMode === "light" ? "neutrals.300" : "neutrals.0"}
@@ -113,7 +113,7 @@ export default function Projects() {
                 as={Button}
                 rightIcon={isOpen ? <ChevronDownIcon /> : <ChevronUpIcon />}
               >
-                {category.length - (isLargerThanLg ? 4 : 2)} More
+                {category.length - (isLargerThanLg ? 4 : 0)} More
               </MenuButton>
               <MenuList
                 p={1}
@@ -124,7 +124,7 @@ export default function Projects() {
                 gap={3}
               >
                 {category
-                  .slice(isLargerThanLg ? 4 : 2, category.length)
+                  .slice(isLargerThanLg ? 4 : 0, category.length)
                   .map((item, index) => (
                     <ListButton
                       onlClickHandler={handelListButton}

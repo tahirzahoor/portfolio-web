@@ -40,7 +40,7 @@ export default function ProjectCard({
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5 }}
           >
-            <Image width={"md"} src={image} />
+            <Image  width={"md"} src={image?image:MockProject} />
           </motion.div>
         </CardBody>
       </Card>
