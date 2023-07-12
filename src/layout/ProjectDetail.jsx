@@ -244,7 +244,7 @@ export default function ProjectDetail() {
               w={{ base: "full", lg: "fit-content" }}
               justifyContent={"center"}
             >
-              <Heading size={{ base: "md", lg: "xl" }}>Heading</Heading>
+            <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
               <Heading
                 size={{ base: "xs", lg: "md" }}
                 fontWeight={"medium"}
@@ -254,7 +254,7 @@ export default function ProjectDetail() {
               </Heading>
             </Stack>
             <Box>
-              <Heading size={{ base: "md", lg: "xl" }}>{project.title}</Heading>
+           
               {project.links?.map((item, index) => (
                 <LinkIconButton
                   key={index}
