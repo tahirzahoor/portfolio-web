@@ -250,7 +250,11 @@ export default function Home() {
             >
               8+
             </Heading>
-            <Text width={"80%"} textAlign={"center"} fontSize={{ base: "sm", lg: "xl" }}>
+            <Text
+              width={"80%"}
+              textAlign={"center"}
+              fontSize={{ base: "sm", lg: "xl" }}
+            >
               YEARS OF EXPERIENCE
             </Text>
           </HStack>
@@ -270,11 +274,14 @@ export default function Home() {
             >
               150+
             </Heading>
-            <Text width={"80%"} textAlign={"center"} fontSize={{ base: "sm", lg: "xl" }}>
+            <Text
+              width={"80%"}
+              textAlign={"center"}
+              fontSize={{ base: "sm", lg: "xl" }}
+            >
               Projects Completed
             </Text>
           </HStack>
-
         </Stack>
         <Stack gap={3} textAlign={{ base: "center", lg: "left" }}>
           <Heading
@@ -395,7 +402,6 @@ export default function Home() {
               category={item.category}
             />
           ))}
-
         </Box>
       </Box>
       <Box mt={20}>
