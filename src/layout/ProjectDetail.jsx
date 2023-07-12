@@ -145,8 +145,12 @@ export default function ProjectDetail() {
     setStartColor(project.colorScheme?.startColor);
     setEndColor(project.colorScheme?.endColor);
   }, [id]);
-  const projects = useSelector((state) => state.projects);
+  const projects = useSelector((state) => state.projects).filter((item)=>item.logo);
   const { colorMode } = useColorMode();
+
+  console.log(projects);
+
+ 
 
   return (
     <Box>
