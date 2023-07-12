@@ -229,8 +229,7 @@ export default function ProjectDetail() {
         </Box>
       </Box>
 
-      {(project.links?.platform == "android" ||
-        project.links?.platform == "android") && (
+      {project.links?.platform?.trim().toLowerCase() !== "web"  && (
           <Box
             color={"black"}
             bgColor={"#DCE5EF"}
