@@ -38,7 +38,7 @@ export default function ProjectMainCard({
           bgColor={"#E7ECF9"}
           border={"1px"}
           borderColor={"neutrals.50"}
-
+          width={{base:"sm",lg:"xl"}} height={{base:"xs",lg:"sm"}}
           _hover={{ boxShadow: "2xl" }}
 
         >
@@ -53,13 +53,13 @@ export default function ProjectMainCard({
               textAlign={"center"}
               size={{ base: "sm", lg: "md" }}
             >
-              {category}
+              {category ? category :"CATEGORY"}
             </Heading>
             <motion.div
               animate={{ scale: isHovered ? 1.1 : 1 }}
               transition={{ duration: 0.5 }}
             >
-              <Image width={"sm"} src={mainImage?mainImage:MockProject} mt={5}   />
+              <Image src={mainImage} mt={5}  alt="Main Image" />
             </motion.div>
           </CardBody>
         </Card>

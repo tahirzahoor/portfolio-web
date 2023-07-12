@@ -34,13 +34,14 @@ export default function ProjectCard({
         bgColor={colorMode == "light" ? "primary.50" : "primary.50"}
         borderRadius={"3xl"}
         p={{ base: 0, lg: 5 }}
+        width={{base:"sm",lg:"xl"}} height={{base:"xs",lg:"xs"}}
       >
         <CardBody display={"flex"}>
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5 }}
           >
-            <Image  width={"md"} src={image?image:MockProject} />
+            <Image  width={"md"} src={image} alt="Card Main Image" />
           </motion.div>
         </CardBody>
       </Card>
