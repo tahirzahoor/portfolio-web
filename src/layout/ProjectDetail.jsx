@@ -148,7 +148,7 @@ export default function ProjectDetail() {
   const projects = useSelector((state) => state.projects).filter((item)=>item.logo);
   const { colorMode } = useColorMode();
 
-  console.log(projects);
+
 
  
 
