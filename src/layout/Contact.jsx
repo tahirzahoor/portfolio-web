@@ -85,12 +85,12 @@ export default function Contact() {
           <CustomCard
             image={Address}
             heading={"Address"}
-            description={"PakArab Society , Lahore Pakistan"}
+            description={"House no 333 C, Pak Arab Lahore"}
           />
           <CustomCard
             image={Phone_1}
             heading={"Phone Number"}
-            description={"+923044040187"}
+            description={"+92-3044040187"}
           />
           <CustomCard
             image={Emai_1}

@@ -28,11 +28,11 @@ export default function Footer() {
         <Stack direction={{ base: "column", lg: "row  " }} justifyContent={"space-evenly"}>
           <HStack>
             <Image src={locationIcon} />
-            <Text fontSize={"sm"}>PakArab Society , Lahore Pakistan</Text>
+            <Text fontSize={"sm"}>House no 333 C, Pak Arab Lahore</Text>
           </HStack>
           <HStack>
             <Image src={phoneIcon} />
-            <Text fontSize={"sm"}>+923044040187</Text>
+            <Text fontSize={"sm"}>+92-3044040187</Text>
           </HStack>
           <HStack>
             <Image src={mailIcon} />

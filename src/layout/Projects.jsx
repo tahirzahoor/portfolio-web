@@ -70,7 +70,7 @@ export default function Projects() {
       >
         <Heading mt={{ base: 5, lg: 16 }}>Projects</Heading>
         <Text fontFamily={"custom"}>
-          Ut enim ad minima veniam, quis nostrum exercitationem
+        Journey Through My Works: Where Innovation Meets Imagination!
         </Text>
       </Box>
 
