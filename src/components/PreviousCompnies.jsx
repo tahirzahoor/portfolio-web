@@ -70,7 +70,7 @@ export default function PreviousCompnies() {
         <Box
           onMouseEnter={() => {
             setfedex(!fedex);
-          }}
+          }}  
           onMouseLeave={() => {
             setfedex(!fedex);
           }}
