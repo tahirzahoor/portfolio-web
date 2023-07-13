@@ -101,6 +101,7 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
         <Heading
           size={"sm"}
           fontWeight={"medium"}
+          fontFamily={"custom"}
           color={colorMode === "light" && "neutrals.90"}
         >
           {description}
