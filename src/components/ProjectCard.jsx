@@ -22,60 +22,66 @@ export default function ProjectCard({
 }) {
   const { colorMode } = useColorMode();
   return (
-    <Stack
-      direction={{ base: "column", lg: odd ? "row-reverse" : "row" }}
-      gap={"16"}
-      mx={{ base: 0, lg: 20 }}
-      my={{ base: 10, lg: 10 }}
-      _hover={{ cursor: "pointer" }}
-      alignItems={"center"}
-    >
-      <Card
-        bgColor={colorMode == "light" ? "primary.50" : "primary.50"}
-        borderRadius={"3xl"}
-        p={{ base: 0, lg: 5 }}
-        width={{base:"sm",lg:"xl"}} height={{base:"xs",lg:"xs"}}
-      >
-        <CardBody display={"flex"}>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image  width={"md"} src={image} alt="Card Main Image" />
-          </motion.div>
-        </CardBody>
-      </Card>
+    <Link to={`/project/${id}`}>
       <Stack
-
-        gap={2}
-        textAlign={{ base: "center", lg: "left" }}
-        w={{ base: "full", lg: "60%" }}
+        direction={{ base: "column", lg: odd ? "row-reverse" : "row" }}
+        gap={{ base: 5, lg: 16 }}
+        my={10}
+        _hover={{ cursor: "pointer" }}
+        alignItems={"center"}
       >
-        <Heading
-          as={"h6"}
-          fontWeight={"medium"}
-          color={"primary.200"}
-          size={"md"}
+        <Card
+          bgColor={colorMode == "light" ? "primary.50" : "primary.50"}
+          borderRadius={"3xl"}
+          p={{ base: 0, lg: 5 }}
+          width={{ base: "xs", lg: "xl" }}
+          height={{ base: "200px", lg: "xs" }}
         >
-          {title}
-        </Heading>
-        <Text
-          fontSize={"xl"}
-          fontFamily={"custom"}
-          noOfLines={3}
-          color={colorMode == "light" ? "neutrals.200" : "neutrals.0"}
+          <CardBody display={"flex"}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                width={{ base: "xs", lg: "md" }}
+                src={image}
+                alt="Card Main Image"
+              />
+            </motion.div>
+          </CardBody>
+        </Card>
+        <Stack
+          gap={2}
+          textAlign={{ base: "center", lg: "left" }}
+          w={{ base: "full", lg: "60%" }}
         >
-          {description}
-        </Text>
-        <Text color={"primary.200"} fontWeight={"semibold"} fontSize={"sm"}>
-          {category}
-        </Text>
-        <Box display={{ base: "flex", lg: "block" }} justifyContent={"center"}>
-          <Link to={`/project/${id}`}>
+          <Heading
+            as={"h6"}
+            fontWeight={"medium"}
+            color={"primary.200"}
+            size={"md"}
+          >
+            {title}
+          </Heading>
+          <Text
+            fontSize={"xl"}
+            fontFamily={"custom"}
+            noOfLines={3}
+            color={colorMode == "light" ? "neutrals.200" : "neutrals.0"}
+          >
+            {description}
+          </Text>
+          <Text color={"primary.200"} fontWeight={"semibold"} fontSize={"sm"}>
+            {category}
+          </Text>
+          <Box
+            display={{ base: "none", lg: "block" }}
+            justifyContent={"center"}
+          >
             <CustomUnSolidButton />
-          </Link>
-        </Box>
+          </Box>
+        </Stack>
       </Stack>
-    </Stack>
+    </Link>
   );
 }

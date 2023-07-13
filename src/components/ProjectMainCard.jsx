@@ -20,11 +20,12 @@ export default function ProjectMainCard({
   mainImage,
   id,
 }) {
-  
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Link to={`/project/${id}`}>
-      <Stack m={{ base: 2, lg: 0 }} _hover={{ cursor: "pointer" }}
+      <Stack
+        m={{ base: 2, lg: 0 }}
+        _hover={{ cursor: "pointer" }}
         onMouseEnter={() => {
           setIsHovered(true);
         }}
@@ -38,9 +39,9 @@ export default function ProjectMainCard({
           bgColor={"#E7ECF9"}
           border={"1px"}
           borderColor={"neutrals.50"}
-          width={{base:"sm",lg:"xl"}} height={{base:"xs",lg:"sm"}}
+          width={{ base: "xs", lg: "xl" }}
+          height={{ base: "250px", lg: "sm" }}
           _hover={{ boxShadow: "2xl" }}
-
         >
           <CardBody>
             <Heading color={"black"} textAlign={"center"} size={"md"}>
@@ -53,13 +54,13 @@ export default function ProjectMainCard({
               textAlign={"center"}
               size={{ base: "sm", lg: "md" }}
             >
-              {category ? category :"CATEGORY"}
+              {category ? category : "CATEGORY"}
             </Heading>
             <motion.div
               animate={{ scale: isHovered ? 1.1 : 1 }}
               transition={{ duration: 0.5 }}
             >
-              <Image src={mainImage} mt={5}  alt="Main Image" />
+              <Image src={mainImage} mt={5} alt="Main Image" />
             </motion.div>
           </CardBody>
         </Card>
@@ -69,45 +70,24 @@ export default function ProjectMainCard({
           h={"50px"}
         >
           {isHovered && (
-            <Link to={`/project/${id}`}>
-              <motion.div
-                initial={{ y: -50 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1 }}
-              >
-                <Button
-                  variant={"unstyled"}
-                  rightIcon={<AiOutlineRight />}
-                  display={"flex"}
-                  color={"primary.200"}
-                >
-                  {" "}
-                  View More
-                </Button>
-              </motion.div>
-            </Link>
-          )}
-        </Box>
-        <Box
-          display={{ base: "flex", lg: "none" }}
-          justifyContent={"center"}
-          h={"50px"}
-        >
-          <Link to={`/project/${id}`}>
-            <Button
-              mt={5}
-              variant={"unstyled"}
-              rightIcon={<AiOutlineRight />}
-              display={"flex"}
-              color={"primary.200"}
+            <motion.div
+              initial={{ y: -50, zIndex: -1 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
             >
-              {" "}
-              View More
-            </Button>
-          </Link>
+              <Button
+                variant={"unstyled"}
+                rightIcon={<AiOutlineRight />}
+                display={"flex"}
+                color={"primary.200"}
+              >
+                {" "}
+                View More
+              </Button>
+            </motion.div>
+          )}
         </Box>
       </Stack>
     </Link>
-
   );
 }

@@ -85,17 +85,17 @@ export default function Contact() {
           <CustomCard
             image={Address}
             heading={"Address"}
-            description={"Abcd city, Country."}
+            description={"PakArab Society , Lahore Pakistan"}
           />
           <CustomCard
             image={Phone_1}
             heading={"Phone Number"}
-            description={"+92-123-456-789-00"}
+            description={"+923044040187"}
           />
           <CustomCard
             image={Emai_1}
             heading={"Email"}
-            description={"Example@abc.com"}
+            description={"tahirzahoor456@gmail.com"}
           />
         </Stack>
       </Stack>

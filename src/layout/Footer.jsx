@@ -28,15 +28,15 @@ export default function Footer() {
         <Stack direction={{ base: "column", lg: "row  " }} justifyContent={"space-evenly"}>
           <HStack>
             <Image src={locationIcon} />
-            <Text fontSize={"sm"}>123-A abcd street city, Country</Text>
+            <Text fontSize={"sm"}>PakArab Society , Lahore Pakistan</Text>
           </HStack>
           <HStack>
             <Image src={phoneIcon} />
-            <Text fontSize={"sm"}>123-A abcd street city, Country</Text>
+            <Text fontSize={"sm"}>+923044040187</Text>
           </HStack>
           <HStack>
             <Image src={mailIcon} />
-            <Text fontSize={"sm"}>123-A abcd street city, Country</Text>
+            <Text fontSize={"sm"}>tahirzahoor456@gmail.com</Text>
           </HStack>
         </Stack>
         <Stack gap={{ base: "3", lg: "5" }} direction={["column", "row"]}>
