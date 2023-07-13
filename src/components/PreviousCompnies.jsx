@@ -1,12 +1,12 @@
 import { Box, Stack } from "@chakra-ui/react";
-import AirBnbColorless from "../assets/images/airbnbCollorless.svg";
-import MicroSoftColorless from "../assets/images/MicroSoftColorless.svg";
-import googleColorless from "../assets/images/googleClorelss.svg";
-import feedExColorless from "../assets/images/fedexColorless.svg";
-import colored_1 from "../assets/images/Airbnb.svg";
-import colored_2 from "../assets/images/Component 41.svg";
-import colored_3 from "../assets/images/Component 42.svg";
-import colored_4 from "../assets/images/Component 43.svg";
+import AirBnbColorless from "../assets/images/collreles_1.svg";
+import MicroSoftColorless from "../assets/images/colorless_3.svg";
+import googleColorless from "../assets/images/colorless_2.svg";
+import feedExColorless from "../assets/images/colorless_4.svg";
+import colored_1 from "../assets/images/color_1.svg";
+import colored_2 from "../assets/images/colored_2.svg";
+import colored_3 from "../assets/images/colored_3.svg";
+import colored_4 from "../assets/images/color_4.svg";
 import { useState } from "react";
 export default function PreviousCompnies() {
   const [airbnb, setAirbnb] = useState(true);
@@ -30,7 +30,7 @@ export default function PreviousCompnies() {
           w={{ base: "150px", lg: "300" }}
           h="100px"
           bgSize={"contain"}
-          bgImage={airbnb ? AirBnbColorless : colored_1}
+          bgImage={!airbnb ? AirBnbColorless : colored_1}
           bgRepeat={"no-repeat"}
           bgPosition="center"
           transition="background-image 0.3s ease-in-out"
@@ -77,7 +77,7 @@ export default function PreviousCompnies() {
           w={{ base: "150px", lg: "300" }}
           h="100px"
           bgSize={"contain"}
-          bgImage={fedex ? feedExColorless : colored_4}
+          bgImage={!fedex ? feedExColorless : colored_4}
           bgRepeat={"no-repeat"}
           bgPosition="center"
           transition="background-image 0.3s ease-in-out"
