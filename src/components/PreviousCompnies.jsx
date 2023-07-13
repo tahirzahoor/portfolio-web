@@ -30,7 +30,7 @@ export default function PreviousCompnies() {
           w={{ base: "150px", lg: "300" }}
           h="100px"
           bgSize={"contain"}
-          bgImage={!airbnb ? AirBnbColorless : colored_1}
+          bgImage={airbnb ? AirBnbColorless : colored_1}
           bgRepeat={"no-repeat"}
           bgPosition="center"
           transition="background-image 0.3s ease-in-out"
