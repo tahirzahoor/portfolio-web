@@ -82,8 +82,8 @@ const ProjectDesCard = ({ direction, description, image, title }) => {
       alignItems={"center"}
 
     >
-      <Card p={5} bgColor={"#E7ECF9"} borderRadius={"3xl"} alignItems={"center"}>
-        <Image width={"lg"} src={image} />
+      <Card p={5}  width={{base:"xs",lg:"lg"}} height={{base:"200px",lg:"xs"}} bgColor={"#E7ECF9"} borderRadius={"3xl"} alignItems={"center"}>
+        <Image  src={image} />
       </Card>
       <Stack
         w={{ base: "full", lg: "40%" }}
@@ -266,7 +266,8 @@ export default function ProjectDetail() {
             </Box>
           </Box>
         )}
-      <Box
+      {project.comment?.text&&
+        <Box
         bgColor={colorMode === "light" ? "neutrals.30" : "neutrals.600"}
         my={10}
         mx={{ base: -5, lg: -16 }}
@@ -339,6 +340,7 @@ export default function ProjectDetail() {
           transform="rotate(160deg)"
         />
       </Box>
+      }
 
       {projects.length > 4 && (
         <Box py={10} position={"relative"}>
