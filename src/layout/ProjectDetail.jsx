@@ -197,7 +197,7 @@ export default function ProjectDetail() {
         <ProjectDesCard
           description={project.solutionStatement}
           title={"Solution"}
-          image={project.images ? project.images[0] : project.mainImage}
+          image={project.images ? project.images[1] : project.mainImage}
           direction={true}
         />
       </Box>
