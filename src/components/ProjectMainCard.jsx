@@ -35,7 +35,7 @@ export default function ProjectMainCard({
       >
         <Card
           px={{ base: "5", lg: "20" }}
-          py={{ base: "0", lg: "2" }}
+          py={{ base: "0", lg: "20" }}
           bgColor={"#E7ECF9"}
           border={"1px"}
           borderColor={"neutrals.50"}
